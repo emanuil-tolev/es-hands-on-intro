@@ -1,0 +1,171 @@
+GET /
+
+#### 1ST PART CRUD
+DELETE villes
+
+# Create the first doc
+PUT villes/_doc/cergy
+{
+  "message": "Ici c'est Cergy"
+}
+GET villes/_doc/cergy
+
+# Add a field
+PUT villes/_doc/cergy
+{
+  "message": "Ici c'est Cergy",
+  "meteo": "nuageux"
+}
+
+GET villes/_doc/cergy
+
+# Remove the doc
+DELETE villes/_doc/cergy
+GET villes/_doc/cergy
+
+# Create some documents
+POST villes/_doc/
+{
+  "message": "Ici c'est Cergy",
+  "meteo": "nuageux",
+  "nom": "Cergy"
+}
+# Just one or two
+POST villes/_doc/
+{
+  "message": "Ici c'est Cergy Pontoise",
+  "meteo": "nuageux",
+  "nom": "Cergy Pontoise"
+}
+# Create some other documents
+POST villes/_doc/
+{
+  "message": "Ici c'est Pontoise",
+  "meteo": "pluie",
+  "nom": "Pontoise"
+}
+POST villes/_doc/
+{
+  "message": "Ici c'est Montréal",
+  "meteo": "beau",
+  "nom": "Montréal"
+}
+
+
+#### SEARCH
+# Search all
+GET villes/_search
+
+
+
+
+
+
+
+# Why this difference?
+GET villes/_search
+{
+  "query": {
+    "term": {
+      "message": "Cergy"
+    }
+  }
+}
+GET villes/_search
+{
+  "query": {
+    "term": {
+      "message": "cergy"
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+GET villes/_search
+{
+  "query": {
+    "match": {
+      "message": "cergy"
+    }
+  }
+}
+GET villes/_search
+{
+  "query": {
+    "match": {
+      "message": "CERGY!"
+    }
+  }
+}
+GET villes/_search
+{
+  "query": {
+    "match": {
+      "message": "cergy pontoise"
+    }
+  }
+}
+
+
+
+#### 2nd Part: INJECTOR
+
+# Inject data
+# Run aggregations
+# Play in Kibana
+# Show monitoring 
+# Scale Out
+
+GET person/_search?track_total_hits=true
+
+GET person/_search?track_total_hits=true
+{
+  "query": {
+    "match": {
+      "name": "joe"
+    }
+  }, 
+  "size": 0,
+  "aggs": {
+    "by_year": {
+      "date_histogram": {
+        "field": "dateofbirth",
+        "interval": "year"
+      },
+      "aggs": {
+        "by_gender": {
+          "terms": {
+            "field": "gender"
+          },
+          "aggs": {
+            "children": {
+              "avg": {
+                "field": "children"
+              }
+            }
+          }
+        }
+      }
+    },
+    "by_gender": {
+      "terms": {
+        "field": "gender"
+      }
+    }
+  }
+}
