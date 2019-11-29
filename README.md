@@ -1,3 +1,5 @@
+# A Hands-on Introduction to Elasticsearch and Kibana
+
 1. You might like to read through [the workshop requirements](https://github.com/emanuil-tolev/es-hands-on-intro/blob/master/workshop-requirements.md) to make sure the software is running and configured correctly. `docker` and `docker-compose` will make your life much easier.
 2. git clone https://github.com/emanuil-tolev/es-hands-on-intro.git
 
@@ -9,3 +11,7 @@
 5. Run `./build.sh`
 
     Alternatively, (e.g. if you're using Windows) run each line in the build.sh file as a separate command from inside the new directory.
+
+# Hello Aberystwyth!
+
+## When I came to the UK 10 years ago, I could not have asked for a better and more welcoming place. Whether you end up working at a large company, a start-up, make your own, do research, or any of the other wonderful things you can do, good luck! Try to take care of and to enjoy yourselves.
