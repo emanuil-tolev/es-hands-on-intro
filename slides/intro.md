@@ -46,7 +46,7 @@ autoscale: true
 
 #  Use in production
 
-- Search (online shop front, admin tooling, recommendation systems, ...)
+- Search (online shops, admin tooling, recommender systems, ...)
 - Analytics (business metrics)
 - Web app monitoring: "Logging, Metrics, Traces"
 - Interactive dashboarding
@@ -88,7 +88,9 @@ autoscale: true
 - later we'll play with Kibana, the vis GUI!
 
 ^ Copy paste lines 1 by 1, we'll go through them later.
+
 ^ The crux of this is that you learn how Elasticsearch works. Data comes in from one side. By default, it's analysed (tokenised and then normalised, including lowercasing). The same things happen to data on the other side - your queries coming in. So long as both the data is analysed and the queries are analysed with the same algorithm, everything is fine, we have a match. This is with a Match query. Now, we can turn off analysis for queries coming in - with a Term query. This allows us to search for the analysed indexed data directly. It's useful for things like getting the top 10 most popular tags - or anything that's an exact string rather than normal full text search.
+
 ---
 
 ## https://github.com/emanuil-tolev/es-hands-on-intro
