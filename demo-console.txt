@@ -128,7 +128,7 @@ GET villes/_search
 # Inject data
 # Run aggregations
 # Play in Kibana
-# Show monitoring 
+# Show monitoring
 # Scale Out
 
 GET person/_search?track_total_hits=true
@@ -139,7 +139,7 @@ GET person/_search?track_total_hits=true
     "match": {
       "name": "joe"
     }
-  }, 
+  },
   "size": 0,
   "aggs": {
     "by_year": {
@@ -169,3 +169,5 @@ GET person/_search?track_total_hits=true
     }
   }
 }
+
+# On to a Kibana demo and exercises :). If you reach this point, relax and pat yourself on the back, you're fast.
